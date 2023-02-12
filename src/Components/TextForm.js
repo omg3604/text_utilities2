@@ -83,26 +83,26 @@ export default function TextForm(props) {
             <div>
                 <div className="container mb-3 mt-5">
                     <label htmlFor="myBox" className={`form-label text-${props.mode === 'dark' ? 'light' : 'dark'}`}>Enter text to analyze: </label>
-                    <textarea className={`form-control bg-${props.mode === 'dark' ? 'secondary' : 'light'} bg-gradient text-${props.mode === 'dark' ? 'light' : 'dark'}`} placeholder="Enter text here! " value={text} onChange={handleOnChange} id="myBox" rows="8"></textarea>
+                    <textarea className={`form-control bg-${props.mode === 'dark' ? 'dark' : 'light'} bg-gradient text-${props.mode === 'dark' ? 'light' : 'dark'}`} placeholder="Enter text here! " value={text} onChange={handleOnChange} id="myBox" rows="8"></textarea>
                     <div className='container d-flex flex-row flex-wrap justify-content-between'>
                         <div>
                             <p className={`float-right mx-2 my-2 text-${props.mode === 'dark' ? 'light' : 'dark'}`}>Character Count : {text.length} , Word Count : {text.split(" ").length - 1}</p>
                         </div>
                         <div>
-                            <button className={`btn btn-outline-warning border border-warning mx-3 my-3`} onClick={handleUndoClick}>Undo Changes</button>
-                            <button className={`btn btn-outline-primary border border-primary mx-2 my-2`} onClick={handleCopyClick}>Copy Text</button>
-                            <button className='btn btn-outline-danger mx-2 my-2' onClick={handleClearClick}>Clear Text</button>
+                            <button disabled={text.length===0} className={`btn btn-outline-warning border border-warning mx-3 my-3`} onClick={handleUndoClick}>Undo Changes</button>
+                            <button disabled={text.length===0} className={`btn btn-outline-primary border border-primary mx-2 my-2`} onClick={handleCopyClick}>Copy Text</button>
+                            <button disabled={text.length===0} className='btn btn-outline-danger mx-2 my-2' onClick={handleClearClick}>Clear Text</button>
                         </div>
                     </div>
                 </div>
                 <div className={`container m-3 text-${props.mode === 'dark' ? 'light' : 'dark'}`}><h4>Manipulation Tools</h4></div>
                 <div className="container d-flex flex-row flex-wrap justify-content-around">
-                    <button className={`btn btn-outline-${props.mode === 'dark' ? 'light' : 'dark'} border border-${props.mode === 'dark' ? 'light' : 'dark'} mx-3 my-3`} onClick={handleUpperClick}>Convert to UpperCase</button>
-                    <button className={`btn btn-outline-${props.mode === 'dark' ? 'light' : 'dark'} border border-${props.mode === 'dark' ? 'light' : 'dark'} mx-3 my-3`} onClick={handleLowerClick}>Convert to LowerCase</button>
-                    <button className={`btn btn-outline-${props.mode === 'dark' ? 'light' : 'dark'} border border-${props.mode === 'dark' ? 'light' : 'dark'} mx-3 my-3`} onClick={handleRemoveNumberClick}>Remove Numeric digits</button>
-                    <button className={`btn btn-outline-${props.mode === 'dark' ? 'light' : 'dark'} border border-${props.mode === 'dark' ? 'light' : 'dark'} mx-3 my-3`} onClick={handleRemoveLetterClick}>Remove English letters</button>
-                    <button className={`btn btn-outline-${props.mode === 'dark' ? 'light' : 'dark'} border border-${props.mode === 'dark' ? 'light' : 'dark'} mx-3 my-3`} onClick={handleRemoveSpecialClick}>Remove Special characters</button>
-                    <button className={`btn btn-outline-${props.mode === 'dark' ? 'light' : 'dark'} border border-${props.mode === 'dark' ? 'light' : 'dark'} mx-3 my-3`} onClick={handleRemoveSpaceClick}>Remove Extra Spaces</button>
+                    <button disabled={text.length===0} className={`btn btn-outline-${props.mode === 'dark' ? 'light' : 'dark'} border border-${props.mode === 'dark' ? 'light' : 'dark'} mx-3 my-3`} onClick={handleUpperClick}>Convert to UpperCase</button>
+                    <button disabled={text.length===0} className={`btn btn-outline-${props.mode === 'dark' ? 'light' : 'dark'} border border-${props.mode === 'dark' ? 'light' : 'dark'} mx-3 my-3`} onClick={handleLowerClick}>Convert to LowerCase</button>
+                    <button disabled={text.length===0} className={`btn btn-outline-${props.mode === 'dark' ? 'light' : 'dark'} border border-${props.mode === 'dark' ? 'light' : 'dark'} mx-3 my-3`} onClick={handleRemoveNumberClick}>Remove Numeric digits</button>
+                    <button disabled={text.length===0} className={`btn btn-outline-${props.mode === 'dark' ? 'light' : 'dark'} border border-${props.mode === 'dark' ? 'light' : 'dark'} mx-3 my-3`} onClick={handleRemoveLetterClick}>Remove English letters</button>
+                    <button disabled={text.length===0} className={`btn btn-outline-${props.mode === 'dark' ? 'light' : 'dark'} border border-${props.mode === 'dark' ? 'light' : 'dark'} mx-3 my-3`} onClick={handleRemoveSpecialClick}>Remove Special characters</button>
+                    <button disabled={text.length===0} className={`btn btn-outline-${props.mode === 'dark' ? 'light' : 'dark'} border border-${props.mode === 'dark' ? 'light' : 'dark'} mx-3 my-3`} onClick={handleRemoveSpaceClick}>Remove Extra Spaces</button>
                 </div>
             </div>
         </>
